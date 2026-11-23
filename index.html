@@ -228,6 +228,88 @@ footer{padding:26px max(4vw,16px) 40px;display:flex;justify-content:space-betwee
  .soft{grid-template-columns:repeat(5,minmax(0,1fr));gap:12px 8px}.ic span{display:none}.hero{min-height:0}.masonry{columns:2 140px;column-gap:10px}.card{margin-bottom:10px}.nums .row{gap:4px}}
 @media(max-width:520px){.sk,.cgrid{grid-template-columns:minmax(0,1fr)}.ic{border-radius:12px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* compacto */
+.band{padding:clamp(36px,4.6vw,72px) max(4vw,16px)}
+h2{font-size:clamp(22px,2.8vw,34px);margin-bottom:12px}
+.lead{font-size:15px;line-height:1.6}
+.eyebrow{margin-bottom:10px;font-size:12px}
+.intro,.skills{gap:14px}.skills{margin-top:14px}
+.intro .main,.nums,.skills .g,.tlw .side,.tl{padding:clamp(18px,2.2vw,30px)}
+.intro .main h2{font-size:clamp(24px,3.2vw,40px)}
+.contacts{margin-top:16px;font-size:13px}
+.nums{gap:16px}.nums .big{font-size:clamp(34px,3.8vw,52px)}.nums .lab{font-size:13px}
+.chip{font-size:12px;padding:5px 10px}.nums .tags{gap:6px}
+h3{font-size:clamp(17px,1.5vw,20px)}
+.sk{gap:8px 20px}.sk div{font-size:14px}
+.soft{grid-template-columns:repeat(5,minmax(0,64px));gap:28px 12px;margin-bottom:18px}
+.ic{border-radius:14px}.ic b{font-size:17px}
+.tlw{gap:14px}.tlw .side h2{font-size:clamp(20px,2vw,28px)}
+.edu{gap:8px;margin-top:14px}.edu div{padding:10px 12px;border-radius:12px}.edu b{font-size:14px}.edu span{font-size:12px}
+.job{grid-template-columns:92px 18px minmax(0,1fr);gap:12px;padding:12px 0}
+.job h3{font-size:16px}.job .co{font-size:13px;margin:0 0 6px}.job .when{font-size:12px}
+.job ul{display:flex;flex-wrap:wrap;gap:2px 14px}.job li{font-size:13px;padding-left:12px}.job li:before{top:9px;width:5px}
+.job .ax:before{bottom:-28px}
+.brands{padding:12px 0}
+.nichebar{margin-top:16px;gap:8px}.nb{min-height:48px;padding:6px 14px 6px 8px;border-radius:14px}.nb .ico{width:32px;height:32px;border-radius:10px}.nb b{font-size:13px}.nb small{font-size:11px}
+.group{margin-top:18px}.ghead{padding:12px 18px;margin-bottom:12px;border-radius:18px}.ghead h3{font-size:clamp(14px,1.4vw,18px)}.ghead p{font-size:12px}.ghead .ct{font-size:30px}
+.masonry{columns:5 180px;column-gap:12px}.card{margin-bottom:12px;border-radius:14px}
+.lps{margin-top:28px;gap:clamp(20px,3vw,40px) clamp(16px,2.4vw,32px)}
+.dev .meta{margin-top:14px}.dev .meta b{font-size:13px}
+.cta{padding:clamp(24px,3.6vw,48px)}.cta .big{font-size:clamp(28px,5vw,68px);margin:4px 0 18px}
+.cgrid{margin-top:24px;gap:10px}.cg{padding:14px 16px;border-radius:16px}
+@media(max-width:700px){
+ .band{padding:30px 14px}
+ .g{border-radius:20px}
+ .intro .main,.nums,.skills .g,.tlw .side,.tl{padding:18px}
+ .intro .main h2{font-size:24px}h2{font-size:21px}
+ .lead{font-size:14px;line-height:1.55}
+ .lead+.lead{display:none}
+ .contacts{flex-direction:column;gap:6px}
+ .nums .big{font-size:32px}.nums .row{gap:6px}
+ .sk{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 10px}.sk div{font-size:12.5px;gap:8px}.sk div:before{width:5px;height:5px;margin-top:7px}
+ .soft{grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+ .job{grid-template-columns:16px minmax(0,1fr);gap:10px;padding:10px 0}
+ .job .ax i{width:10px;height:10px}
+ .job h3{font-size:15px}.job li{font-size:12px}
+ .edu div{padding:8px 10px}
+ .nb{min-height:42px}.nb .ico{width:28px;height:28px}.nb small{display:none}
+ .ghead{padding:10px 14px}.ghead p{display:none}.ghead .ct{font-size:24px}
+ .masonry{columns:2;column-gap:8px}.card{margin-bottom:8px;border-radius:12px}
+ .cta .big{font-size:30px}.cgrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.cg b{font-size:13px}.cg{padding:12px}
+}
+
+@media(max-width:700px){
+ .chip{font-size:11px;padding:4px 8px}.nums{gap:12px}
+ .soft{grid-template-columns:repeat(5,minmax(0,48px));justify-content:space-between}.ic b{font-size:14px}.ic{border-radius:11px}
+ .job .when{font-size:11px;display:inline}
+ .job ul{display:block}.job li{display:inline;padding:0}.job li:before{display:none}.job li:not(:last-child):after{content:" · ";color:var(--ember)}
+ .tlw .side .lead{display:none}
+ .lps{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 10px;perspective:900px}
+ .lps .dev:nth-child(n){transform:rotateY(-6deg) rotateX(3deg)}
+ .dev .frame{padding:5px;border-radius:12px}.dev .bar{padding:2px 3px 5px}.dev .bar i{width:6px;height:6px}.dev .bar span{display:none}
+ .dev .meta{margin-top:8px;display:block}.dev .meta b{font-size:11px}.dev .meta small{font-size:11px;margin-top:2px}.dev .meta em{display:none}.dev .shadow{bottom:-14px}
+ #lps .lead{font-size:13px}
+}
+
+@media(max-width:700px){
+ .masonry{columns:auto;display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none;margin:0 -14px;padding-left:14px;padding-right:14px}
+ .masonry::-webkit-scrollbar{display:none}
+ .masonry .card{flex:0 0 44%;margin:0;scroll-snap-align:start;align-self:flex-start}
+ .group{margin-top:14px}.more{display:none}
+ .ghead:after{content:"deslize →";font-size:11px;color:var(--mute);margin-left:auto;margin-right:10px;order:1}
+ .ghead .ct{order:2}
+}
+
+@media(max-width:700px){
+ .ghead{flex-wrap:nowrap;gap:8px}.ghead>div{flex:1 1 auto;min-width:0}.ghead h3{font-size:12.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+ .ghead:after{content:"→";margin:0;font-size:14px}
+ .masonry .card{align-self:stretch}.masonry .card img{height:100%;object-fit:cover}
+}
+
+@media(max-width:700px){
+ .masonry .card{flex:0 0 auto;width:auto;height:210px;align-self:auto}.masonry .card img{height:100%;width:auto;object-fit:initial}
+}
 </style>
 </head>
 <body>
@@ -282,11 +364,7 @@ footer{padding:26px max(4vw,16px) 40px;display:flex;justify-content:space-betwee
           <div class="eyebrow" style="margin-bottom:10px">Nichos em que já atuei</div>
           <div class="tags" id="ntags"></div>
         </div>
-        <div>
-          <div class="eyebrow" style="margin-bottom:6px">Formação</div>
-          <b style="font-weight:500;font-size:17px">Tecnólogo em Marketing</b>
-          <div style="font-size:14px;color:#ffd6c8">Faculdade Pitágoras (Anhanguera)</div>
-        </div>
+        
       </div>
     </div>
     <div class="skills rv">
@@ -397,7 +475,7 @@ let view=[];
 function draw(){
   const ks=cur==='all'?order:[cur];view=[];
   groups.innerHTML=ks.map(k=>{
-    const L=by(k),lim=(cur==='all'&&!open[k])?8:L.length,cl=[...new Set(L.map(x=>x.c))];
+    const L=by(k),lim=innerWidth<=700?L.length:((cur==='all'&&!open[k])?10:L.length),cl=[...new Set(L.map(x=>x.c))];
     const cards=L.slice(0,lim).map(x=>{const i=view.push(x)-1;return '<button class="card" data-i="'+i+'" aria-label="Ampliar '+esc(x.c)+'"><img loading="lazy" src="'+x.f+'" width="'+x.w+'" height="'+x.h+'" alt="'+esc(x.t+' para '+x.c)+'"><span class="cap"><b>'+esc(x.c)+'</b><span>'+x.t+'</span></span></button>'}).join('');
     return '<div class="group"><div class="g ghead"><div><h3>'+N[k][0]+'</h3><p>'+N[k][1]+' · '+esc(cl.join(', '))+'</p></div><span class="ct fire">'+String(L.length).padStart(2,'0')+'</span></div><div class="masonry">'+cards+'</div>'+(L.length>lim?'<div class="more"><button class="btn glassy" data-more="'+k+'">Ver todos os '+L.length+' de '+N[k][0].toLowerCase()+'</button></div>':'')+'</div>'}).join('');
 }
