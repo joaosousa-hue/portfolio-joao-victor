@@ -424,18 +424,25 @@ lb.addEventListener('click',e=>{if(e.target===lb||e.target===lbv)close()});
 document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(ci-1);if(e.key==='ArrowRight')show(ci+1)});
 
 const stage=document.getElementById('stage'),me=document.querySelector('.me.cut img'),nms=stage.querySelectorAll('.nm');
-function place(){const s=stage.getBoundingClientRect(),r=me.getBoundingClientRect();if(!r.width)return;
-  const nj=stage.querySelector('.nj'),nv=stage.querySelector('.nv'),W=s.width,pad=16;
+function place(){const s=stage.getBoundingClientRect();
+  const nj=stage.querySelector('.nj'),nv=stage.querySelector('.nv'),W=s.width,pad=16,mes=stage.querySelectorAll('.me');
+  if(innerWidth<=700){
+    const fs=Math.min(W*.14,64);nj.style.fontSize=nv.style.fontSize=fs+'px';nj.style.zIndex=nv.style.zIndex='';
+    const h=nj.offsetHeight,top0=96,pt=top0+h*1.55;
+    mes.forEach(m=>m.style.top=pt+'px');stage.style.paddingTop=(pt+W*1.006-40)+'px';
+    nj.style.setProperty('--x',pad+'px');nj.style.setProperty('--y',top0+'px');
+    nv.style.setProperty('--x',(W-pad-nv.offsetWidth)+'px');nv.style.setProperty('--y',(top0+h*.95)+'px');
+    nj.classList.add('on');nv.classList.add('on');return}
+  mes.forEach(m=>m.style.top='');stage.style.paddingTop='';
+  const r=me.getBoundingClientRect();if(!r.width)return;
   const L=r.left-s.left,T=r.top-s.top;
   const vStart=L+r.width*.82,avail=W-pad-vStart;
-  let fs=Math.min(120,avail/6.9),mobile=fs<44;
-  if(mobile)fs=Math.min(W*.115,60);nj.style.zIndex=nv.style.zIndex=mobile?4:'';
-  nj.style.fontSize=nv.style.fontSize=fs+'px';
+  let fs=Math.min(120,Math.max(40,avail/6.9));
+  nj.style.fontSize=nv.style.fontSize=fs+'px';nj.style.zIndex=nv.style.zIndex='';
   const jw=nj.offsetWidth,vw=nv.offsetWidth,h=nj.offsetHeight;
-  let jx=mobile?pad:L+r.width*.335-jw,vx=mobile?W-pad-vw:vStart;
-  jx=Math.max(pad,jx);vx=Math.min(vx,W-pad-vw);
-  nj.style.setProperty('--x',jx+'px');nj.style.setProperty('--y',(T+r.height*(mobile?.2:.43)-h/2)+'px');
-  nv.style.setProperty('--x',vx+'px');nv.style.setProperty('--y',(T+r.height*(mobile?.55:.58)-h/2)+'px');
+  let jx=Math.max(pad,L+r.width*.335-jw),vx=Math.min(vStart,W-pad-vw);
+  nj.style.setProperty('--x',jx+'px');nj.style.setProperty('--y',(T+r.height*.43-h/2)+'px');
+  nv.style.setProperty('--x',vx+'px');nv.style.setProperty('--y',(T+r.height*.58-h/2)+'px');
   nj.classList.add('on');nv.classList.add('on')}
 if(me.complete)place();me.addEventListener('load',place);
 const ro=new ResizeObserver(()=>{place();setDist()});ro.observe(document.body);
